@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class bolapreta extends Actor
 {
+    public int timer = 30;
+    public int timer1 = 30;
     /**
      * Act - do whatever the chidori wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -30,9 +32,15 @@ public class bolapreta extends Actor
     if (b != null){
         Counter counter = (Counter) getWorld().getObjects(Counter.class).get(0);
         counter.add(1);
-        
+            timer = 0;
             getWorld().removeObject(b);
             getWorld().removeObject(this);
+            
         }
+    if(timer < 1){
+    robowinner world = new robowinner();
+    Greenfoot.setWorld(world);
+    }
+    
     }
 }
